@@ -1,0 +1,97 @@
+//QUES 1
+#include<iostream>
+using namespace std;
+
+int main()
+{
+       int arr[100];
+       int n,i,key,count =0;
+       scanf("%d",&n);
+       
+       printf("enter elements :");
+       for(i=0; i<n; i++)
+       {
+              scanf("%d",&arr[i]);
+       }
+       printf("enter key :");
+       scanf("%d",&key);
+       for(i=0; i<n; i++)
+       {
+              if(arr[i] == key)
+              {
+                    count++; 
+              }
+       }
+       if(count == 0)
+       {
+              printf("KEY NOT PRESENT !!");
+       }
+       else
+       {
+              printf("KEY PRESENT : %d copies",count);
+       }
+       return 0;
+}
+//QUES 2
+#include<iostream>
+using namespace std;
+
+int main()
+{
+       int arr[100];
+       int n,i,j,k;
+       scanf("%d",&n);
+       
+       printf("enter elements :");
+       for(i=0; i<n; i++)
+       {
+              scanf("%d",&arr[i]);
+       }
+       for(i=0; i<n; i++)
+       {
+              for(j=i+1; j<n; j++)
+              {
+                     for(k=j+1; k<n; k++)
+                     {
+                            if(arr[i] + arr[j] == arr[k])
+                            {
+                                   printf("%d %d %d\n",i,j,k);
+                            }
+                     }
+              }
+              
+       }
+       return 0;
+}
+//QUES 3 
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+       int arr[100];
+       int n,i,j,key,count=0;
+       scanf("%d",&n);
+       
+       printf("enter elements :");
+       for(i=0; i<n; i++)
+       {
+              scanf("%d",&arr[i]);
+       }
+       printf("enter key :");
+       scanf("%d",&key);
+       for(i=0; i<n; i++)
+       {
+              for(j=i+1; j<n; j++)
+              {
+                     if(abs(arr[i] - arr[j]) == key)
+                     {
+                            count++;
+                     }
+              }
+       }
+       printf("%d pairs",count);
+       
+       return 0;
+}       
