@@ -1,0 +1,115 @@
+//1.BUBBLE SORT
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[10];
+    int n,i,j,temp;
+    cout<<"Enter size of array :";
+    cin>>n;
+    cout<<"Enter data:";
+    for(i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    for(i=0; i<n; i++)
+    {
+        for(j=i+1; j<n; j++)
+        {
+            if(a[j]<a[i])
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    cout<<"Data after sorting :";
+    for(i=0; i<n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+
+    return 0;
+}
+
+
+
+
+//2.SELECTION SORT
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[10];
+    int n,i,j,temp,small;
+    cout<<"Enter size of array :";
+    cin>>n;
+    cout<<"Enter data:";
+    for(i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    for(i=0; i<n-1; i++)
+    {
+        small = i;
+        for(j=i+1; j<n; j++)
+        {
+            if(a[j]<a[small])
+            {
+                small = j;
+                temp = a[small];
+                a[small] = a[i];
+                a[i] = temp;
+            }
+        }
+    }
+    cout<<"Data after sorting :";
+    for(i=0; i<n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+
+    return 0;
+}
+
+
+//INSERTION SORT
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[10];
+    int n,i,j,temp;
+    cout<<"Enter size of array :";
+    cin>>n;
+    cout<<"Enter data:";
+    for(i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    for(i=1; i<n; i++)
+    {
+        temp = a[i];
+        j = i-1;
+        while(j>=0 && temp <= a[j])
+        {
+            a[j+1] = a[j];
+            j = j-1;
+        }
+        a[j+1] = temp;
+    }
+    cout<<"Data after sorting :";
+    for(i=0; i<n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+
+    return 0;
+}
