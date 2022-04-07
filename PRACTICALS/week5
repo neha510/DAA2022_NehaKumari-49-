@@ -1,0 +1,76 @@
+//QUESTION 1
+#include<bits/stdc++.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   char arr[15];
+   int n,c;
+   char ans;
+   vector<int>v;
+   cout<<"enter size of array :";
+   cin>>n;
+   cout<<"enter elements: ";
+   for(int i=0;i<n;i++)
+       cin>>arr[i];
+       
+   sort(arr,arr+n); 
+   for(int i=0;i<n;i++)
+       cout<<arr[i]<<" ";
+       
+    for(int i=0;i<n;i++)
+    {
+           c = 1;
+           if(arr[i] == arr[i+1])
+           {
+                  c++;
+                  v.push_back(c);
+           }
+    }
+    ans = *max_element(v.begin(),v.end());
+    cout<<ans;
+ 
+    return 0;
+}
+
+
+//QUESTION 2:
+#include<bits/stdc++.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int arr[15];
+   int n,key;
+   cout<<"enter size of array :";
+   cin>>n;
+   cout<<"enter elements: ";
+   for(int i=0;i<n;i++)
+       cin>>arr[i];
+       
+   sort(arr,arr+n); 
+   
+   cout<<"enter key :";
+   cin>>key;
+   int a = 0,b = n-1;
+  
+   while(a<b)
+   {
+       if(arr[a] + arr[b] == key)
+       {
+              cout<<"Element pair exist!!";
+              cout<<arr[a]<<"and"<<arr[b];
+              break;
+       }
+       else if(arr[a]+arr[b]>key)
+       b--;
+       else 
+       a++;
+   }
+ 
+    return 0;
+}
